@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acción</th>
+        </tr>
+        {% for producto in productos_bb %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <form action="/carrito/agregar" method="POST">
+                        <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                        <input type="hidden" name="precio" value="{{ producto.precio }}">
+                        <button type="submit">Agregar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acción</th>
+        </tr>
+        {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <form action="/carrito/eliminar" method="POST">
+                        <input type="hidden" name="nombre" value="{{ producto.nombre }}">
+                        <input type="hidden" name="precio" value="{{ producto.precio }}">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
