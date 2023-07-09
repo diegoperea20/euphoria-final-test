@@ -3,7 +3,7 @@ In the future, the total price will be characterized as follows  (En el futuro s
 
 web only flask (web solo flask) :
 <p align="center">
-  <img src="README-images\flask-app.JPG" alt="Stepflask">
+  <img src="README-images\flask-app.PNG" alt="Stepflask">
 </p>
 
 
